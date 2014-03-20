@@ -1,0 +1,7 @@
+<h1>All Tasks across all Lists</h1>
+<ul>
+	<% @tasks.each do |task| %>
+	<li><%= task.desc %> - <%= link_to "Delete Task", task, confirm: 'Are you sure?', 
+	method: :delete %> </li>
+	<% end %>
+</ul>

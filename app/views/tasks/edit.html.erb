@@ -1,0 +1,10 @@
+<h1>Edit Task Name</h1>
+<p>Previous Name: <%= @task.desc %><br />
+	Currently: <%= Task.is_complete(@task) %></p>
+<%= form_for([@list, @task]) do |f| %>
+	<%= f.label "New Name:" %>
+	<%= f.text_field :desc %>
+	<%= f.label "Completed?" %>
+	<%= f.select :complete, [["Complete", true], ["Incomplete", false]] %>
+	<%= f.submit %>
+<% end %>

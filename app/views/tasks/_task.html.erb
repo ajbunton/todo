@@ -1,0 +1,6 @@
+<%= form_for ([@list, task]), remote: true do |f| %>
+	<%= f.check_box :complete %>
+	<%= f.submit "Update", class: 'update_button' %>
+	<%= f.label :complete, task.desc %>
+	<%= link_to "Delete Task", [@list, task], confirm: 'Are you sure?', method: :delete, remote: true %>
+<% end %>

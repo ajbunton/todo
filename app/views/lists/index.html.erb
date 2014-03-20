@@ -1,0 +1,20 @@
+<h1>To Do Lists</h1>
+
+<table>
+	<tr>
+		<th>List Name</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<%= render @lists %>
+</table>
+
+<div id = "new_list"><%= link_to "Create a New To Do List", "#", remote: true, turbolink: false %></div>
+<div id = "new_list_form">
+	<%= form_for(List.new, remote: true) do |f| %>
+		<%= f.label "New List Name:" %>
+		<%= f.text_field :name %>
+		<%= f.submit %>
+		<%= button_tag "Cancel", type: :reset, class: 'cancel' %>
+	<% end %>
+</div>

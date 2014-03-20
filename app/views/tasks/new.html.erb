@@ -1,0 +1,10 @@
+<h1>Add a New Task</h1>
+<h2><%= @list.name %></h2>
+<%= form_for([@list, @task]) do |f| %>
+	<%= f.label "Description of Task" %>
+	<%= f.text_field :desc %>
+	<%= f.label "Already Completed?" %>
+	<%= f.check_box :complete %>
+	<% @task.list_id = @list.id %>
+	<%= f.submit %>
+<% end %>
