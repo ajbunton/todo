@@ -1,4 +1,12 @@
 <h1 id = "list_name" ><%= @list.name %></h1>
+<div id = "update_list_form">
+<%= form_for @list, remote: true do |f| %>
+	<%= f.label "New Name" %>
+	<%= f.text_field :name %>
+	<%= f.submit %>
+	<button id="cancel">Cancel</button>
+<% end %>
+</div>
 
 
 <h2>Incomplete Tasks</h2>
@@ -11,8 +19,18 @@
 	<%= render	@complete_tasks %>
 </div>
 
-<p><%= link_to "Add a new task to this list", new_list_task_path(@list.id), id: "new_task_link", remote: true %></p>
+<p><%= link_to "Add a new task to this list", "#", id: "new_task_link", remote: true %></p>
 
-<p><%= link_to "Edit this list's name", edit_list_path(@list), remote: true, id: "edit_list_name" %></p>
+<div id = "add_task_form">
+<%= form_for [@list, Task.new], remote: true do |f| %>
+	<%= f.label "Description of Task" %>
+	<%= f.text_field :desc %>
+	<% list_id = @list.id %>
+	<%= f.submit %>
+	<button id="cancel_task">Cancel</button>
+<% end %>
+</div>
+
+<p><%= link_to "Edit this list's name", '#', remote: true, id: "edit_list_name" %></p>
 
 <p><%= link_to "Back to All Lists", lists_path %></p>

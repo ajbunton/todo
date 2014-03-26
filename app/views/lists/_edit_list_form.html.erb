@@ -1,6 +1,0 @@
-<%= form_for @list, remote: true do |f| %>
-	<%= f.label "New Name" %>
-	<%= f.text_field :name %>
-	<%= f.submit %>
-<% end %>
-<%= link_to "Cancel", "#", remote: true, turbolink: false, class: 'cancel' %>

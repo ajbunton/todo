@@ -1,4 +1,5 @@
-$('#new_task').remove();
 $('#new_task_link').show();
+$('#add_task_form').hide();
+$('#task_desc').val('');
 $('#incomplete_tasks').append('<%= escape_javascript(render @task) %>');
 $('#edit_task_<%= @task.id %>').submitOnCheck();

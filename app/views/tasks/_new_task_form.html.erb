@@ -1,7 +1,0 @@
-<%= form_for [@list, Task.new], remote: true do |f| %>
-	<%= f.label "Description of Task" %>
-	<%= f.text_field :desc %>
-	<% list_id = @list.id %>
-	<%= f.submit %>
-<% end %>
-<%= link_to "Cancel", "#", remote: true, turbolink: false, id: 'cancel' %>
