@@ -35,21 +35,22 @@ class ListsController < ApplicationController
 
 
 	def edit
+
 		respond_to do |format|
 			format.js
+			format.html
 		end
 	end
 
 	def update
 
 		respond_to do |format|
+			format.js
 			if @list.update_attributes(list_params)
-				format.html {redirect_to @list}
-				format.js			
+				format.html {redirect_to @list}			
 			else
 				format.html {render "edit"}
 			end
-			format.js
 		end
 	end
 

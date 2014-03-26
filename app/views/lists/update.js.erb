@@ -1,6 +1,3 @@
-<% if @task.complete? %>
-  $('#edit_task_<%= @task.id %>').appendTo('#complete_tasks');
-<% else %>
-  $('#edit_task_<%= @task.id %>').appendTo('#incomplete_tasks');
-<% end %>
-$('h1').html('<%= @list.name %>');
+$('#list_name').html('<%= @list.name %>');
+$('.edit_list').hide();
+$('#edit_list_name').show();

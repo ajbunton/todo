@@ -35,12 +35,12 @@ class TasksController < ApplicationController
 
 	def update
 		respond_to do |format|
-			if @task.update_attributes(task_params)
-				redirect_to @list
-			else
-				render "edit"
-			end
 			format.js
+			if @task.update_attributes(task_params)
+				format.html {redirect_to @list}
+			else
+				format.html {render "edit"}
+			end
 		end
 	end
 
